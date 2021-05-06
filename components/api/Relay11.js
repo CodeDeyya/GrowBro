@@ -3,7 +3,7 @@ import axios from "axios";
 import Button from "components/CustomButtons/Button.js";
 import * as api from '../../config/api.js'
 
-class Air extends React.Component {
+class Light extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -16,7 +16,7 @@ class Air extends React.Component {
     axios
       .get(api.getRelay)
       .then(response => {
-        const newState = response.data.R6;
+        const newState = response.data.R11;
         this.setState({ result: newState });
 			//	console.log(newState);
 				if (newState == "OFF"){
@@ -37,7 +37,7 @@ class Air extends React.Component {
 
 offHandler = () => {
 
-var data = '{"R6":"OFF"}' ;
+var data = '{"R11":"OFF"}' ;
 
 var config = {
   method: 'put',
@@ -59,7 +59,7 @@ axios(config)
 		axios
 		.get(api.getRelay)
 		.then(response => {
-			const newState = response.data.R6;
+			const newState = response.data.R11;
 			this.setState({ result: newState });
 			this.setState({ cloff: "info"});
 			this.setState({ clon: "white"});
@@ -75,7 +75,7 @@ axios(config)
 
 onHandler = () => {
 
-	var data = '{"R6":"ON"}' ;
+	var data = '{"R11":"ON"}' ;
 	
 	var config = {
 		method: 'put',
@@ -98,7 +98,7 @@ onHandler = () => {
 			axios
 			.get(api.getRelay)
 			.then(response => {
-				const newState = response.data.R6;
+				const newState = response.data.R11;
 				this.setState({ result: newState });
 				this.setState({ cloff: "white"});
 				this.setState({ clon: "info"});
@@ -166,4 +166,4 @@ onHandler = () => {
     );
   }
 }
-export default Air;
+export default Light;

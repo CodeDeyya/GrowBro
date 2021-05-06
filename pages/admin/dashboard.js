@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 // react plugin for creating charts
 import ChartistGraph from "react-chartist";
 // @material-ui/core
@@ -32,7 +32,8 @@ import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 
 import { bugs, website, server } from "variables/general.js";
-
+import axios from 'axios'
+import * as api from '../../config/api.js'
 import {
   dailySalesChart,
   emailsSubscriptionChart,
@@ -44,6 +45,72 @@ import styles from "assets/jss/nextjs-material-dashboard/views/dashboardStyle.js
 function Dashboard() {
   const useStyles = makeStyles(styles);
   const classes = useStyles();
+  const [state, setState] = useState();
+  const [status, setStatus] = useState();
+  const [waterTemp, setWaterTemp] = useState();
+  const [ambientTemp, setAmbientTemp] = useState();
+  const [relativeHumidity, setRelativeHumidity] = useState();
+  const [waterLevel, setWaterLevel] = useState();
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
+      axios
+      .get(api.dataAPI)
+      .then(response => {
+      var data = response.data;
+      setState(data.Status);
+      setWaterTemp(data.Wtemp);
+      setAmbientTemp(data.Atemp);
+      setRelativeHumidity(data.Rhumidity);
+      setWaterLevel(data.WaterLevel)
+			if(data.Status === 0){
+        setStatus("Germination");
+      }
+      if(data.Status === 1){
+        setStatus("Early Veg")
+      }
+      if(data.Status === 2){
+        setStatus("Mid Veg")
+      }
+      if(data.Status === 3){
+        setStatus("Late Veg")
+      }
+      if(data.Status === 4){
+        setStatus("Transition")
+      }
+      if(data.Status === 5){
+        setStatus("Early Flower 1")
+      }
+      if(data.Status === 6){
+        setStatus("Early Flower 2")
+      }
+      if(data.Status === 7){
+        setStatus("Mid Flower 1")
+      }
+      if(data.Status === 8){
+        setStatus("Mid Flower 2")
+      }
+      if(data.Status === 9){
+        setStatus("Late Flower 1")
+      }
+      if(data.Status === 10){
+        setStatus("Late Flower 2")
+      }
+      if(data.Status === 11){
+        setStatus("Flush Week")
+      }
+				
+      })
+      .catch(err => {
+        console.log("oppps", err);
+      });
+
+    }, 1000)
+  
+    return () => clearInterval(intervalId); //This is important
+   
+  }, [])
+
   return (
     <div>
       
@@ -54,8 +121,8 @@ function Dashboard() {
               <CardIcon color="success">
                 <EcoIcon />
               </CardIcon>
-              <p className={classes.cardCategory}>Plant Level</p>
-              <h3 className={classes.cardTitle}>Germination</h3>
+              <p className={classes.cardCategory}>Level</p>
+              <h3 className={classes.cardTitle}>{status}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -75,7 +142,7 @@ function Dashboard() {
               </CardIcon>
               <p className={classes.cardCategory}>Water Temperature</p>
               <h3 className={classes.cardTitle}>
-                10<small>°C</small>
+                {waterTemp}<small>°C</small>
               </h3>
             </CardHeader>
             <CardFooter stats>
@@ -97,7 +164,7 @@ function Dashboard() {
                 <WbSunnyIcon />
               </CardIcon>
               <p className={classes.cardCategory}>Ambient Temperature</p>
-              <h3 className={classes.cardTitle}>30<small>°C</small></h3>
+              <h3 className={classes.cardTitle}>{ambientTemp}<small>°C</small></h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -114,7 +181,7 @@ function Dashboard() {
                 <OpacityIcon/>
               </CardIcon>
               <p className={classes.cardCategory}>Relative Humidity</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <h3 className={classes.cardTitle}>{relativeHumidity}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -131,7 +198,7 @@ function Dashboard() {
                 <LocalDrinkIcon />
               </CardIcon>
               <p className={classes.cardCategory}>Water Level</p>
-              <h3 className={classes.cardTitle}>High</h3>
+              <h3 className={classes.cardTitle}>{waterLevel}</h3>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>

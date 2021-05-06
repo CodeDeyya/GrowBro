@@ -42,6 +42,22 @@ const dashboardRoutes = [
 
     layout: "/admin",
   },
+  {
+    path: "/datalogger",
+    name: "Data Logger",
+    rtlName: "ملف تعريفي للمستخدم",
+    icon: LibraryBooks,
+
+    layout: "/admin",
+  },
+  {
+    path: "/notebook",
+    name: "Note Book",
+    rtlName: "ملف تعريفي للمستخدم",
+    icon: LibraryBooks,
+
+    layout: "/admin",
+  },
   
 ];
 

@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import Button from "components/CustomButtons/Button.js";
+import * as api from '../../config/api.js'
 
 class RelayF extends React.Component {
   constructor(props) {
@@ -13,7 +14,7 @@ class RelayF extends React.Component {
   }
   componentDidMount() {
     axios
-      .get("http://192.168.8.133:8082/api/relays/6052e44860ab3d1d88673fb7")
+      .get(api.getRelay)
       .then(response => {
         const newState = response.data.R1;
         this.setState({ result: newState });
@@ -40,7 +41,7 @@ var data = '{"R9":"OFF"}' ;
 
 var config = {
   method: 'put',
-  url: 'http://192.168.8.133:8082/api/relays/6052e44860ab3d1d88673fb7',
+  url: api.getRelay,
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -56,7 +57,7 @@ axios(config)
 });
 
 		axios
-		.get("http://192.168.8.133:8082/api/relays/6052e44860ab3d1d88673fb7")
+		.get(api.getRelay)
 		.then(response => {
 			const newState = response.data.R9;
 			this.setState({ result: newState });
@@ -78,7 +79,7 @@ onHandler = () => {
 	
 	var config = {
 		method: 'put',
-		url: 'http://192.168.8.133:8082/api/relays/6052e44860ab3d1d88673fb7',
+		url: api.getRelay,
 		headers: { 
 			'Content-Type': 'application/json'
 		},
@@ -95,7 +96,7 @@ onHandler = () => {
 	});
 	
 			axios
-			.get("http://192.168.8.133:8082/api/relays/6052e44860ab3d1d88673fb7")
+			.get(api.getRelay)
 			.then(response => {
 				const newState = response.data.R9;
 				this.setState({ result: newState });

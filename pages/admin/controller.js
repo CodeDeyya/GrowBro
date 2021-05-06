@@ -13,7 +13,7 @@ import AddIcon from '@material-ui/icons/Add';
 import FormatColorResetIcon from '@material-ui/icons/FormatColorReset';
 import InvertColorsIcon from '@material-ui/icons/InvertColors';
 import BlurOnIcon from '@material-ui/icons/BlurOn';
-
+import WbIncandescentRoundedIcon from '@material-ui/icons/WbIncandescentRounded';
 
 // core components
 import GridItem from "components/Grid/GridItem.js";
@@ -37,6 +37,7 @@ import Out from "components/api/Relay7.js";
 import RelayD from "components/api/Relay8.js";
 import RelayF from "components/api/Relay9.js";
 import Aero from "components/api/Relay10.js";
+import Light from "components/api/Relay11.js";
 
 
 const styles = {
@@ -231,6 +232,26 @@ function UserProfile() {
             
             <CardFooter stats>
               <h3>Aerator</h3>
+            </CardFooter>
+          </Card>
+        </GridItem>
+        
+      </GridContainer>
+
+      <GridContainer> 
+    <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="warning" stats icon>
+              <CardIcon color="warning">
+              <WbIncandescentRoundedIcon />  
+              </CardIcon>
+              </CardHeader>
+              <CardBody>
+              <Light />
+              </CardBody>
+            
+            <CardFooter stats>
+              <h3>Grow Light</h3>
             </CardFooter>
           </Card>
         </GridItem>
