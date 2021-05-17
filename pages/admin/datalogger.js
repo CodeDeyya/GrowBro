@@ -128,7 +128,7 @@ function TableList() {
 
 
   }, [])
-
+  
   const nextHandler = () => {
   console.log(state);
  if(state<11)   {
@@ -259,8 +259,6 @@ if(statusNew === 11){
 
 
   }
-
-  
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>

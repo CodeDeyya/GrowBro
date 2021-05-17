@@ -62,7 +62,7 @@ const onSubmit = async() =>{
     
     var config = {
       method: 'get',
-      url: `http://localhost:8082/api/userverification/?q=${email}`,
+      url: `http://3.1.94.73:8082/api/userverification/?q=${email}`,
       headers: { },
       data : data
     };

@@ -62,7 +62,7 @@ var axios = require('axios');
 
 var configget = {
   method: 'get',
-  url: `http://localhost:8082/api/relays/${deviceId}`,
+  url: `http://3.1.94.73:8082/api/relays/${deviceId}`,
   headers: { }
 };
 if(deviceId === ""){
@@ -117,7 +117,7 @@ if(deviceId === ""){
             } else {
               var config = {
                 method: 'put',
-                url: `http://localhost:8082/api/relays/${deviceId}`,
+                url: `http://3.1.94.73:8082/api/relays/${deviceId}`,
                 headers: { 
                   'Content-Type': 'application/json'
                 },
