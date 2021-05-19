@@ -58,6 +58,14 @@ const dashboardRoutes = [
 
     layout: "/admin",
   },
+  {
+    path: "/waterchange",
+    name: "Drain/Fill",
+    rtlName: "ملف تعريفي للمستخدم",
+    icon: LibraryBooks,
+
+    layout: "/admin",
+  },
   
 ];
 
