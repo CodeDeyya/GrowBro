@@ -1,0 +1,5 @@
+
+Sitemap: http://growbro.lk/sitemap.xml
+
+User-agent: *
+Allow: /*

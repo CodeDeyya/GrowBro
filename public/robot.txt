@@ -1,5 +1,0 @@
-
-Sitemap: http://growbro.lk/api/posts-sitemap
-
-User-agent: *
-Allow: /*
