@@ -21,7 +21,7 @@ import Button from "components/CustomButtons/Button.js";
 import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
 import Modal from 'react-bootstrap/Modal';
 
-const IP = "localhost:8082"
+const IP = "3.1.94.73:8082"
 const ID = "6052e44860ab3d1d88673fb7"
 
 function WaterChange() {
