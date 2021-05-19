@@ -76,7 +76,7 @@ DIVOR AUTOMATIONS PVT LTD
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <title>Grow Bro</title>
-          
+          <meta name="google-site-verification" content="j5UvpxJUReTf6GZ3-qT8lnbp8c6o-f5SDslURxEWR8w" />
         </Head>
         <Layout>
           <Component {...pageProps} />
