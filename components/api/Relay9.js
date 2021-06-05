@@ -16,7 +16,7 @@ class RelayF extends React.Component {
     axios
       .get(api.getRelay)
       .then(response => {
-        const newState = response.data.R1;
+        const newState = response.data.R9;
         this.setState({ result: newState });
 			//	console.log(newState);
 				if (newState == "OFF"){
