@@ -200,7 +200,7 @@ export default function BasicTable() {
 
 var config = {
   method: 'put',
-  url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+  url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
   headers: { 
     'Content-Type': 'application/json'
   },
@@ -308,7 +308,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -331,7 +331,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -354,7 +354,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -377,7 +377,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -400,7 +400,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -423,7 +423,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -446,7 +446,7 @@ axios(config)
       console.log("ammata")
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -474,7 +474,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -497,7 +497,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -520,7 +520,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -543,7 +543,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -566,7 +566,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -589,7 +589,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -617,7 +617,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -640,7 +640,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -663,7 +663,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -686,7 +686,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -709,7 +709,7 @@ axios(config)
       
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
@@ -732,7 +732,7 @@ axios(config)
       console.log("ammata")
       var config = {
         method: 'put',
-        url: 'http://localhost:8082/api/logger/6052e44860ab3d1d88673fb7',
+        url: 'http://3.1.94.73:8082/api/logger/6052e44860ab3d1d88673fb7',
         headers: { 
           'Content-Type': 'application/json'
         },
