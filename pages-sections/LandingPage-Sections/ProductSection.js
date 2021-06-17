@@ -20,19 +20,18 @@ export default function ProductSection() {
   return (
     <div className={classes.section}>
       <GridContainer justify="center">
-        <GridItem xs={12} sm={12} md={8}>
+        <GridItem xs={12} sm={12} md={12}>
           <h2 className={classes.title}>Let{"'"}s talk product</h2>
           <h5 className={classes.description}>
-            This is the paragraph where you can write more details about your
-            product. Keep you user engaged by providing meaningful information.
-            Remember that by this time, the user is curious, otherwise he wouldn
-            {"'"}t scroll to get here. Add a button if you want the user to see
-            more.
+          GrowBro is inherently designed to fit novice gardeners or amateur horticulture enthusiasts or anyone who loves technology. However, clients who are more experienced in hydroponics can use GrowBro with much relative ease in comparison with alternatives in the market. So GrowBro is for both inexperienced and experienced growers alike. 
           </h5>
         </GridItem>
       </GridContainer>
       <div>
         <GridContainer>
+          <GridItem xs={12}>
+          <h2 className={classes.title}>Key Features</h2>
+          </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
               title="Free Chat"

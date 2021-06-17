@@ -52,6 +52,14 @@ function Dashboard() {
   const [relativeHumidity, setRelativeHumidity] = useState();
   const [waterLevel, setWaterLevel] = useState();
 
+  const [germination,setGermination] = useState(0);
+  const [earlyveg,setEarlyVeg] = useState(0);
+  const [midveg,setMidVeg] = useState(0);
+  const [lateveg,setLateVeg] = useState(0);
+  const [transition,setTransition] = useState(0);
+  const [flower,setFlower] = useState(0);
+  const [flushweek,setFlushWeek] = useState(0);
+
   useEffect(() => {
     const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
       axios
@@ -105,12 +113,53 @@ function Dashboard() {
         console.log("oppps", err);
       });
 
+      axios
+      .get(api.getStatus)
+      .then(response => {
+        var data = [];
+        var newState = response.data
+       
+        newState.forEach(function(object){
+          if(object._id.Status === 0){
+          setGermination(object.Count);
+          
+          }
+          if(object._id.Status === 1){
+            setEarlyVeg(object.Count);
+            }
+            if(object._id.Status === 2){
+              setMidVeg(object.Count);
+              }
+              if(object._id.Status === 3){
+                setLateVeg(object.Count);
+                }
+                if(object._id.Status === 4){
+                  setTransition(object.Count);
+                  }
+                  if(object._id.Status === 5){
+                    setFlower(object.Count);
+                    }
+                    if(object._id.Status === 6){
+                      setFlushWeek(object.Count);
+                      }     
+      });
+        
+      })
+      .catch(err => {
+        console.log("oppps", err);
+      });
+
     }, 1000)
+
+    
   
     return () => clearInterval(intervalId); //This is important
    
   }, [])
 
+  if (status === "Germination"){
+    
+  }
   return (
     <div>
       
@@ -127,7 +176,7 @@ function Dashboard() {
             <CardFooter stats>
               <div className={classes.stats}>
                 <Update />
-                Okay
+                {germination}
               </div>
             </CardFooter>
           </Card>
