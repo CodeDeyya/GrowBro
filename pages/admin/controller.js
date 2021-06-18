@@ -38,6 +38,7 @@ import RelayD from "components/api/Relay8.js";
 import RelayF from "components/api/Relay9.js";
 import Aero from "components/api/Relay10.js";
 import Light from "components/api/Relay11.js";
+import Light1 from "components/Light.js";
 
 const styles = {
   cardCategoryWhite: {
@@ -72,6 +73,23 @@ function UserProfile() {
               </CardIcon>
             </CardHeader>
             <CardBody>
+              <Light1></Light1>
+            </CardBody>
+            <CardFooter stats>
+              <h3>PlantType</h3>
+            </CardFooter>
+          </Card>
+        </GridItem>
+      </GridContainer>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
+          <Card>
+            <CardHeader color="success" stats icon>
+              <CardIcon color="success">
+                <LocalPharmacyIcon />
+              </CardIcon>
+            </CardHeader>
+            <CardBody>
               <Relay1 />
             </CardBody>
             <CardFooter stats>
@@ -79,6 +97,7 @@ function UserProfile() {
             </CardFooter>
           </Card>
         </GridItem>
+
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="rose" stats icon>

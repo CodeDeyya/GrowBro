@@ -157,7 +157,7 @@ function Dashboard() {
   return (
     <div>
       <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
+        <GridItem xs={12} sm={6} md={12}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
@@ -165,22 +165,6 @@ function Dashboard() {
               </CardIcon>
               <p className={classes.cardCategory}>Level</p>
               <h3 className={classes.cardTitle}>{status}</h3>
-            </CardHeader>
-            <CardFooter stats>
-              <div className={classes.stats}>
-                <Update />
-                {germination}
-              </div>
-            </CardFooter>
-          </Card>
-        </GridItem>
-        <GridItem xs={12} sm={12} md={12}>
-          <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="success">
-                <EcoIcon />
-              </CardIcon>
-              <Light></Light>
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
