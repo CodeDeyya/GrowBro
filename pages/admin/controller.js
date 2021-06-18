@@ -6,14 +6,14 @@ import InputLabel from "@material-ui/core/InputLabel";
 import Admin from "layouts/Admin.js";
 
 //icons
-import LocalPharmacyIcon from '@material-ui/icons/LocalPharmacy';
-import AcUnitIcon from '@material-ui/icons/AcUnit';
-import RemoveIcon from '@material-ui/icons/Remove';
-import AddIcon from '@material-ui/icons/Add';
-import FormatColorResetIcon from '@material-ui/icons/FormatColorReset';
-import InvertColorsIcon from '@material-ui/icons/InvertColors';
-import BlurOnIcon from '@material-ui/icons/BlurOn';
-import WbIncandescentRoundedIcon from '@material-ui/icons/WbIncandescentRounded';
+import LocalPharmacyIcon from "@material-ui/icons/LocalPharmacy";
+import AcUnitIcon from "@material-ui/icons/AcUnit";
+import RemoveIcon from "@material-ui/icons/Remove";
+import AddIcon from "@material-ui/icons/Add";
+import FormatColorResetIcon from "@material-ui/icons/FormatColorReset";
+import InvertColorsIcon from "@material-ui/icons/InvertColors";
+import BlurOnIcon from "@material-ui/icons/BlurOn";
+import WbIncandescentRoundedIcon from "@material-ui/icons/WbIncandescentRounded";
 
 // core components
 import GridItem from "components/Grid/GridItem.js";
@@ -39,7 +39,6 @@ import RelayF from "components/api/Relay9.js";
 import Aero from "components/api/Relay10.js";
 import Light from "components/api/Relay11.js";
 
-
 const styles = {
   cardCategoryWhite: {
     color: "rgba(255,255,255,.62)",
@@ -64,32 +63,32 @@ function UserProfile() {
   const classes = useStyles();
   return (
     <div>
-    <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-              <LocalPharmacyIcon />  
+                <LocalPharmacyIcon />
               </CardIcon>
             </CardHeader>
-              <CardBody>
-                <Relay1 />
-              </CardBody>
-             <CardFooter stats>
-             <h3>Nuet1</h3>
-             </CardFooter> 
+            <CardBody>
+              <Relay1 />
+            </CardBody>
+            <CardFooter stats>
+              <h3>Nuet1</h3>
+            </CardFooter>
           </Card>
-    </GridItem>
+        </GridItem>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="rose" stats icon>
               <CardIcon color="rose">
-              <LocalPharmacyIcon />  
+                <LocalPharmacyIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Relay22 />
-              </CardBody>
+            </CardBody>
             <CardFooter stats>
               <h3>Nuet2</h3>
             </CardFooter>
@@ -99,32 +98,32 @@ function UserProfile() {
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
-              <LocalPharmacyIcon />  
+                <LocalPharmacyIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Relay3 />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Nuet3</h3>
             </CardFooter>
           </Card>
         </GridItem>
-    </GridContainer>
+      </GridContainer>
 
-    <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-              <AcUnitIcon />  
+                <AcUnitIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Chiller1 />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Chiller1</h3>
             </CardFooter>
@@ -134,13 +133,13 @@ function UserProfile() {
           <Card>
             <CardHeader color="rose" stats icon>
               <CardIcon color="rose">
-              <AcUnitIcon />  
+                <AcUnitIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Chiller2 />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Chiller2</h3>
             </CardFooter>
@@ -148,18 +147,18 @@ function UserProfile() {
         </GridItem>
       </GridContainer>
 
-      <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-              <RemoveIcon />  
+                <RemoveIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
-              <Air/>
-              </CardBody>
-            
+            </CardHeader>
+            <CardBody>
+              <Air />
+            </CardBody>
+
             <CardFooter stats>
               <h3>Exhaust</h3>
             </CardFooter>
@@ -169,13 +168,13 @@ function UserProfile() {
           <Card>
             <CardHeader color="rose" stats icon>
               <CardIcon color="rose">
-              <AddIcon />  
+                <AddIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Out />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Air In</h3>
             </CardFooter>
@@ -183,18 +182,18 @@ function UserProfile() {
         </GridItem>
       </GridContainer>
 
-      <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-              <FormatColorResetIcon />  
+                <FormatColorResetIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <RelayD />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Drain</h3>
             </CardFooter>
@@ -204,13 +203,13 @@ function UserProfile() {
           <Card>
             <CardHeader color="rose" stats icon>
               <CardIcon color="rose">
-              <InvertColorsIcon />  
+                <InvertColorsIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <RelayF />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Fill</h3>
             </CardFooter>
@@ -218,47 +217,43 @@ function UserProfile() {
         </GridItem>
       </GridContainer>
 
-      <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="success" stats icon>
               <CardIcon color="success">
-              <BlurOnIcon />  
+                <BlurOnIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Aero />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Aerator</h3>
             </CardFooter>
           </Card>
         </GridItem>
-        
       </GridContainer>
 
-      <GridContainer> 
-    <GridItem xs={12} sm={6} md={3}>
+      <GridContainer>
+        <GridItem xs={12} sm={6} md={3}>
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
-              <WbIncandescentRoundedIcon />  
+                <WbIncandescentRoundedIcon />
               </CardIcon>
-              </CardHeader>
-              <CardBody>
+            </CardHeader>
+            <CardBody>
               <Light />
-              </CardBody>
-            
+            </CardBody>
+
             <CardFooter stats>
               <h3>Grow Light</h3>
             </CardFooter>
           </Card>
         </GridItem>
-        
       </GridContainer>
-
-
     </div>
   );
 }
