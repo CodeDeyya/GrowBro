@@ -1,116 +1,106 @@
 import React from "react";
 import axios from "axios";
 import Button from "components/CustomButtons/Button.js";
-import * as api from '../../config/api.js'
+import * as api from "../../config/api.js";
 
 class Light extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       result: "",
-			clon:"white",
-			cloff: "white"
+      clon: "white",
+      cloff: "white",
     };
   }
   componentDidMount() {
     axios
       .get(api.getRelay)
-      .then(response => {
-        const newState = response.data.R11;
+      .then((response) => {
+        const newState = response.data.Em;
         this.setState({ result: newState });
-			//	console.log(newState);
-				if (newState == "OFF"){
-					this.setState({cloff: "info"});
-					this.setState({clon: "white"})
-				}
-				if (newState == "ON"){
-					this.setState({cloff: "white"});
-					this.setState({clon: "info"})
-				}
-				
-				
+        //	console.log(newState);
+        if (newState == 0) {
+          this.setState({ cloff: "info" });
+          this.setState({ clon: "white" });
+        }
+        if (newState == 1) {
+          this.setState({ cloff: "white" });
+          this.setState({ clon: "info" });
+        }
       })
-      .catch(err => {
+      .catch((err) => {
         console.log("oppps", err);
       });
   }
 
-offHandler = () => {
+  offHandler = () => {
+    var data = '{"Em":0}';
 
-var data = '{"R11":"OFF"}' ;
+    var config = {
+      method: "put",
+      url: api.getRelay,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+    console.log("offhandler");
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
-var config = {
-  method: 'put',
-  url: api.getRelay,
-  headers: { 
-    'Content-Type': 'application/json'
-  },
-  data : data
-};
-console.log("offhandler");
-axios(config)
-.then(function (response) {
-  console.log(JSON.stringify(response.data));
-})
-.catch(function (error) {
-  console.log(error);
-});
+    axios
+      .get(api.getRelay)
+      .then((response) => {
+        const newState = response.data.Em;
+        this.setState({ result: newState });
+        this.setState({ cloff: "info" });
+        this.setState({ clon: "white" });
+        // console.log(newState)
+      })
+      .catch((err) => {
+        console.log("oppps", err);
+      });
+  };
 
-		axios
-		.get(api.getRelay)
-		.then(response => {
-			const newState = response.data.R11;
-			this.setState({ result: newState });
-			this.setState({ cloff: "info"});
-			this.setState({ clon: "white"});
-			// console.log(newState)
-		})
-		.catch(err => {
-			console.log("oppps", err);
-		});
+  onHandler = () => {
+    var data = '{"Em":1}';
 
+    var config = {
+      method: "put",
+      url: api.getRelay,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      data: data,
+    };
+    console.log("onhandler");
 
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
 
-}
-
-onHandler = () => {
-
-	var data = '{"R11":"ON"}' ;
-	
-	var config = {
-		method: 'put',
-		url: api.getRelay,
-		headers: { 
-			'Content-Type': 'application/json'
-		},
-		data : data
-	};
-	console.log("onhandler");
-
-	axios(config)
-	.then(function (response) {
-		console.log(JSON.stringify(response.data));
-	})
-	.catch(function (error) {
-		console.log(error);
-	});
-	
-			axios
-			.get(api.getRelay)
-			.then(response => {
-				const newState = response.data.R11;
-				this.setState({ result: newState });
-				this.setState({ cloff: "white"});
-				this.setState({ clon: "info"});
-				// console.log(newState)
-			})
-			.catch(err => {
-				console.log("oppps", err);
-			});
-	
-	
-	
-	}
+    axios
+      .get(api.getRelay)
+      .then((response) => {
+        const newState = response.data.Em;
+        this.setState({ result: newState });
+        this.setState({ cloff: "white" });
+        this.setState({ clon: "info" });
+        // console.log(newState)
+      })
+      .catch((err) => {
+        console.log("oppps", err);
+      });
+  };
 
   // convertHandler = () => {
   //   if (this.state.fromCurrency !== this.state.toCurrency) {
@@ -142,27 +132,27 @@ onHandler = () => {
   //   }
   // };
   render() {
-		
-		const {relay} =this.props;
-		var offButton =this.state.cloff;
-		var onButton =this.state.clon;
+    const { relay } = this.props;
+    var offButton = this.state.cloff;
+    var onButton = this.state.clon;
 
-	//	console.log(`offButton ${offButton} `);
-	//	console.log(`onButton ${onButton} `);
-		
-		// console.log(offButton);
-		// console.log("........");
-		// console.log("OnButton" + onbutton);
-		// console.log(onButton);
-		
+    //	console.log(`offButton ${offButton} `);
+    //	console.log(`onButton ${onButton} `);
+
+    // console.log(offButton);
+    // console.log("........");
+    // console.log("OnButton" + onbutton);
+    // console.log(onButton);
 
     return (
       <div>
-			<Button onClick={this.onHandler} color ={onButton} size = "lg" round>On</Button>
-			<Button onClick={this.offHandler} color ={offButton} size = "lg" round>Off</Button>
-       
+        <Button onClick={this.onHandler} color={onButton} size="lg" round>
+          On
+        </Button>
+        <Button onClick={this.offHandler} color={offButton} size="lg" round>
+          Off
+        </Button>
       </div>
-      
     );
   }
 }

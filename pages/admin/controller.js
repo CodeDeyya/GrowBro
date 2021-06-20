@@ -14,6 +14,7 @@ import FormatColorResetIcon from "@material-ui/icons/FormatColorReset";
 import InvertColorsIcon from "@material-ui/icons/InvertColors";
 import BlurOnIcon from "@material-ui/icons/BlurOn";
 import WbIncandescentRoundedIcon from "@material-ui/icons/WbIncandescentRounded";
+import BuildRoundedIcon from "@material-ui/icons/BuildRounded";
 
 // core components
 import GridItem from "components/Grid/GridItem.js";
@@ -258,9 +259,9 @@ function UserProfile() {
       <GridContainer>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardHeader color="warning" stats icon>
-              <CardIcon color="warning">
-                <WbIncandescentRoundedIcon />
+            <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <BuildRoundedIcon />
               </CardIcon>
             </CardHeader>
             <CardBody>
@@ -268,7 +269,7 @@ function UserProfile() {
             </CardBody>
 
             <CardFooter stats>
-              <h3>Grow Light</h3>
+              <h3>Maintenance Mode</h3>
             </CardFooter>
           </Card>
         </GridItem>
