@@ -31,6 +31,8 @@ import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
 import Light from "components/Light.js";
+import Modal from "react-bootstrap/Modal";
+import LoginButton from "../../components/LoginButton.js";
 
 import { bugs, website, server } from "variables/general.js";
 import axios from "axios";
@@ -53,6 +55,9 @@ function Dashboard() {
   const [relativeHumidity, setRelativeHumidity] = useState();
   const [waterLevel, setWaterLevel] = useState();
 
+  const [device, setDevice] = useState();
+  const [showModal, setShowModal] = useState(false);
+
   const [germination, setGermination] = useState(0);
   const [earlyveg, setEarlyVeg] = useState(0);
   const [midveg, setMidVeg] = useState(0);
@@ -61,11 +66,24 @@ function Dashboard() {
   const [flower, setFlower] = useState(0);
   const [flushweek, setFlushWeek] = useState(0);
 
+  const onHide = () => {
+    setShowModal(false);
+  };
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       //assign interval to a variable to clear it.
+
+      const devicelogged = sessionStorage.getItem("device");
+      console.log(devicelogged);
+      if (devicelogged) {
+        setDevice(devicelogged);
+      } else {
+        setShowModal(true);
+      }
+
       axios
-        .get(api.dataAPI)
+        .get(api.dataAPI + devicelogged)
         .then((response) => {
           var data = response.data;
           setState(data.Status);
@@ -156,6 +174,23 @@ function Dashboard() {
   }
   return (
     <div>
+      <Modal
+        show={showModal}
+        onHide={() => onHide()}
+        size="sm"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Please Login
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <LoginButton></LoginButton>
+        </Modal.Body>
+      </Modal>
+
       <GridContainer>
         <GridItem xs={12} sm={6} md={12}>
           <Card>

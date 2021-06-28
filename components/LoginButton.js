@@ -21,6 +21,7 @@ const LoginButton = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState("");
+  const [device, setDevice] = useState("");
 
   const onHide = () => {
     setShowModal(false);
@@ -42,7 +43,7 @@ const LoginButton = () => {
   };
 
   useEffect(() => {
-    const loggedInUser = localStorage.getItem("user");
+    const loggedInUser = sessionStorage.getItem("user");
     if (loggedInUser) {
       setUser(loggedInUser);
     }
@@ -76,7 +77,9 @@ const LoginButton = () => {
             progress: undefined,
           });
           setUser(message.Email);
-          localStorage.setItem("user", message.Email);
+          setDevice(message._id);
+          sessionStorage.setItem("user", message.Email);
+          sessionStorage.setItem("device", message._id);
           console.log(message.Email);
           setShowModal(false);
           setShowModalUser(true);
