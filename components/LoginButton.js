@@ -112,7 +112,12 @@ const LoginButton = () => {
 
   return (
     <div>
-      <Button variant="info" onClick={() => setShowModal(true)} round={true}>
+      <Button
+        variant="info"
+        onClick={() => setShowModal(true)}
+        round={true}
+        block
+      >
         <i class="fas fa-user"></i>Login
       </Button>
 

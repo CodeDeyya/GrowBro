@@ -12,10 +12,17 @@ import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
 import Drawer from "@material-ui/core/Drawer";
+import Grid from "@material-ui/core/Grid";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/nextjs-material-kit/components/headerStyle.js";
+import logo from "../../assets/img/logo.png";
+import LoginButton from "../LoginButton";
+import AddUser from "../AddUser";
 
 const useStyles = makeStyles(styles);
 
@@ -59,16 +66,28 @@ export default function Header(props) {
     [classes.appBar]: true,
     [classes[color]]: color,
     [classes.absolute]: absolute,
-    [classes.fixed]: fixed
+    [classes.fixed]: fixed,
   });
   const brandComponent = (
     <Link href="/landing" as="/landing">
       <Button className={classes.title}>{brand}</Button>
     </Link>
   );
+
+  const list = () => (
+    <div className={appBarClasses}>
+      <List>
+        <ListItem>Maps</ListItem>
+      </List>
+    </div>
+  );
+
   return (
     <AppBar className={appBarClasses}>
       <Toolbar className={classes.container}>
+        <div className={classes.flex}>
+          <img src={logo}></img>
+        </div>
         {leftLinks !== undefined ? brandComponent : null}
         <div className={classes.flex}>
           {leftLinks !== undefined ? (
@@ -98,14 +117,16 @@ export default function Header(props) {
           anchor={"right"}
           open={mobileOpen}
           classes={{
-            paper: classes.drawerPaper
+            paper: classes.drawerPaper,
           }}
           onClose={handleDrawerToggle}
         >
-          <div className={classes.appResponsive}>
-            {leftLinks}
-            {rightLinks}
-          </div>
+          <List>
+            <ListItem>Dashboard</ListItem>
+            <ListItem>Our Product</ListItem>
+            <ListItem>Contact Us</ListItem>
+            <ListItem>About Us</ListItem>
+          </List>
         </Drawer>
       </Hidden>
     </AppBar>
@@ -113,7 +134,7 @@ export default function Header(props) {
 }
 
 Header.defaultProp = {
-  color: "white"
+  color: "white",
 };
 
 Header.propTypes = {
@@ -126,7 +147,7 @@ Header.propTypes = {
     "transparent",
     "white",
     "rose",
-    "dark"
+    "dark",
   ]),
   rightLinks: PropTypes.node,
   leftLinks: PropTypes.node,
@@ -150,7 +171,7 @@ Header.propTypes = {
       "transparent",
       "white",
       "rose",
-      "dark"
-    ]).isRequired
-  })
+      "dark",
+    ]).isRequired,
+  }),
 };

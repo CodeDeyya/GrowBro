@@ -170,7 +170,12 @@ const AddUser = () => {
 
   return (
     <div>
-      <Button variant="danger" onClick={() => setShowModal(true)} round={true}>
+      <Button
+        variant="danger"
+        onClick={() => setShowModal(true)}
+        round={true}
+        block
+      >
         <i class="fas fa-seedling"></i>Start Grow
       </Button>
 

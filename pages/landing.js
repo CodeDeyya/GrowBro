@@ -9,12 +9,12 @@ import { makeStyles } from "@material-ui/core/styles";
 // core components
 import Header from "components/Header/Header.js";
 import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
+import Grid from "@material-ui/core/Grid";
 import Button from "components/CustomButtons/Button.js";
 import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 import AddUser from "components/AddUser.js";
+import Hidden from "@material-ui/core/Hidden";
 
 import styles from "assets/jss/nextjs-material-kit/pages/landingPage.js";
 
@@ -23,6 +23,7 @@ import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.j
 import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
 import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
 import Typography from "@material-ui/core/Typography";
+import LoginButton from "components/LoginButton.js";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -98,7 +99,6 @@ export default function LandingPage(props) {
         <Header
           color="transparent"
           routes={dashboardRoutes}
-          brand="Grow Bro"
           leftLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{
@@ -107,24 +107,43 @@ export default function LandingPage(props) {
           }}
           {...rest}
         />
-        <Parallax responsive image={require("assets/img/LANDING.png")}>
-          <div className={classes.container}>
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={6}>
-                <h4 className={classes.title}>
-                  <Typography variant="h4" gutterBottom>
-                    GrowBro is a Grow Box with plug and play system. Plug it
-                    into your home socket and you're good to GROW!
-                  </Typography>
-                </h4>
-                <br />
-                <AddUser>
-                  <ToastContainer />
-                </AddUser>
-              </GridItem>
-            </GridContainer>
-          </div>
-        </Parallax>
+        <Hidden smDown>
+          <Parallax responsive image={require("assets/img/front.jpg")}>
+            <div className={classes.container}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} sm={12} md={6}>
+                  <h4 className={classes.title}>
+                    <Typography variant="h4" gutterBottom>
+                      GrowBro is a Grow Box with plug and play system. Plug it
+                      into your home socket and you're good to GROW!
+                    </Typography>
+                  </h4>
+                  <br />
+
+                  <AddUser>
+                    <ToastContainer />
+                  </AddUser>
+                </Grid>
+              </Grid>
+            </div>
+          </Parallax>
+        </Hidden>
+        <Hidden smUp>
+          <Parallax responsive image={require("assets/img/landphone.png")}>
+            <div className={classes.container}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} sm={12} md={6}>
+                  <LoginButton></LoginButton>
+                </Grid>
+                <Grid item xs={12} sm={12} md={6}>
+                  <AddUser>
+                    <ToastContainer />
+                  </AddUser>
+                </Grid>
+              </Grid>
+            </div>
+          </Parallax>
+        </Hidden>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <ProductSection />

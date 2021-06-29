@@ -1,5 +1,5 @@
 /*eslint-disable*/
-import React, {useState} from 'react';
+import React, { useState } from "react";
 import Link from "next/link";
 
 // @material-ui/core components
@@ -16,47 +16,39 @@ import IconButton from "@material-ui/core/IconButton";
 
 // core components
 import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import { Button } from 'react-bootstrap';
-import AddUser from '../AddUser.js'
-import LoginButton from '../LoginButton.js'
+import { Button } from "react-bootstrap";
+import AddUser from "../AddUser.js";
+import LoginButton from "../LoginButton.js";
 
-import Modal from 'react-bootstrap/Modal';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container'
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Grid from "@material-ui/core/Grid";
 
 import styles from "assets/jss/nextjs-material-kit/components/headerLinksStyle.js";
 
 const useStyles = makeStyles(styles);
 
-
 export default function HeaderLinks(props) {
   const classes = useStyles();
- 
+
   return (
-<Container fluid>
-    <Row>
-    <Col sm={8}>
-    </Col>
-    <Col sm={2}>
-    <LoginButton>
-    </LoginButton>
-    </Col>
-    <Col sm={2}>
-    <AddUser>
-    </AddUser>
-    </Col>
-    </Row>
-</Container>    
+    <Grid container spacing={3}>
+      <Grid item xs={12} md={6}>
+        <LoginButton></LoginButton>
+      </Grid>
+      <Grid item xs={12} md={6}>
+        <AddUser></AddUser>
+      </Grid>
+    </Grid>
     // <Row>
-    // <Col> 
+    // <Col>
     // <AddUser></AddUser>
     // </Col>
-    // <Col md={{ span: 15, offset: 7 }}> 
+    // <Col md={{ span: 15, offset: 7 }}>
     // <AddUser></AddUser>
     // </Col>
     // </Row>
-    
   );
 }
