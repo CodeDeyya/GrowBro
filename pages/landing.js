@@ -40,7 +40,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ["Roboto", "sans-serif"].join(","),
+    fontFamily: ["Chilanka", "cursive"].join(","),
   },
 });
 
@@ -94,19 +94,19 @@ export default function LandingPage(props) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div>
-        <Header
-          color="transparent"
-          routes={dashboardRoutes}
-          leftLinks={<HeaderLinks />}
-          fixed
-          changeColorOnScroll={{
-            height: 400,
-            color: "white",
-          }}
-          {...rest}
-        />
+    <div>
+      <Header
+        color="transparent"
+        routes={dashboardRoutes}
+        leftLinks={<HeaderLinks />}
+        fixed
+        changeColorOnScroll={{
+          height: 400,
+          color: "white",
+        }}
+        {...rest}
+      />
+      <ThemeProvider theme={theme}>
         <Hidden smDown>
           <Parallax responsive image={require("assets/img/front.jpg")}>
             <div className={classes.container}>
@@ -128,6 +128,7 @@ export default function LandingPage(props) {
             </div>
           </Parallax>
         </Hidden>
+
         <Hidden smUp>
           <Parallax responsive image={require("assets/img/landphone.png")}>
             <div className={classes.container}>
@@ -144,15 +145,15 @@ export default function LandingPage(props) {
             </div>
           </Parallax>
         </Hidden>
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <ProductSection />
-            <TeamSection />
-            <WorkSection />
-          </div>
+      </ThemeProvider>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <ProductSection />
+          <TeamSection />
+          <WorkSection />
         </div>
-        <Footer />
       </div>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 }

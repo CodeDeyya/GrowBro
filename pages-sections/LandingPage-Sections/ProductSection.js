@@ -15,10 +15,30 @@ import Typography from "@material-ui/core/Typography";
 import styles from "assets/jss/nextjs-material-kit/pages/landingPageSections/productStyle.js";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles({
+  root: {
+    width: "100%",
+    maxWidth: 500,
+  },
+  section: {
+    padding: "70px 0",
+    textAlign: "center",
+  },
+  title: {
+    marginBottom: "1rem",
+    marginTop: "30px",
+    minHeight: "32px",
+    textDecoration: "none",
+    color: "#5AB9EA",
+  },
+  description: {
+    color: "#00754b",
+  },
+});
+
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ["Roboto", "sans-serif"].join(","),
+    fontFamily: ["Chilanka", "cursive"].join(","),
   },
 });
 
@@ -30,7 +50,7 @@ export default function ProductSection() {
         <GridContainer justify="center">
           <GridItem xs={12} sm={12} md={12}>
             <Typography variant="h2" gutterBottom>
-              <h2 className={classes.title}>Let's Grow</h2>
+              <h3 className={classes.title}>Let's Grow</h3>
             </Typography>
             <Typography variant="h5" gutterBottom>
               <h5 className={classes.description}>

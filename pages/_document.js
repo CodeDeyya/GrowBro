@@ -43,6 +43,14 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
             rel="stylesheet"
           ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap"
+            rel="stylesheet"
+          ></link>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <div id="page-transition"></div>
