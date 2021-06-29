@@ -21,7 +21,10 @@ class MyDocument extends Document {
             href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css"
           />
           <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-          <script src="https://kit.fontawesome.com/a85b374e11.js" crossorigin="anonymous"></script>
+          <script
+            src="https://kit.fontawesome.com/a85b374e11.js"
+            crossorigin="anonymous"
+          ></script>
 
           <link
             rel="stylesheet"
@@ -35,6 +38,11 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+            rel="stylesheet"
+          ></link>
         </Head>
         <body>
           <div id="page-transition"></div>

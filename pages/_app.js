@@ -24,9 +24,9 @@ import Router from "next/router";
 import PageChange from "components/PageChange/PageChange.js";
 
 import "assets/css/nextjs-material-dashboard.css?v=1.1.0";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -76,7 +76,10 @@ DIVOR AUTOMATIONS PVT LTD
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <title>Grow Bro</title>
-          <meta name="google-site-verification" content="j5UvpxJUReTf6GZ3-qT8lnbp8c6o-f5SDslURxEWR8w" />
+          <meta
+            name="google-site-verification"
+            content="j5UvpxJUReTf6GZ3-qT8lnbp8c6o-f5SDslURxEWR8w"
+          />
         </Head>
         <Layout>
           <Component {...pageProps} />

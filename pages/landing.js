@@ -22,7 +22,7 @@ import styles from "assets/jss/nextjs-material-kit/pages/landingPage.js";
 import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.js";
 import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
 import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
-
+import Typography from "@material-ui/core/Typography";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -35,6 +35,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { addTask } from "../store/userinfo/userAction";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: ["Roboto", "sans-serif"].join(","),
+  },
+});
 
 const dashboardRoutes = [];
 
@@ -86,44 +93,47 @@ export default function LandingPage(props) {
   };
 
   return (
-    <div>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        brand="Grow Bro"
-        leftLinks={<HeaderLinks />}
-        fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: "white",
-        }}
-        {...rest}
-      />
-      <Parallax responsive image={require("assets/img/LANDING.png")}>
-        <div className={classes.container}>
-          <GridContainer>
-            <GridItem xs={12} sm={12} md={6}>
-              <h1 className={classes.title}> </h1>
-              <h4>
-                GrowBro is a Grow Box with plug and play system. Plug it into
-                your home socket and you're good to GROW!
-              </h4>
-              <br />
-              <AddUser>
-                <ToastContainer />
-              </AddUser>
-            </GridItem>
-          </GridContainer>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header
+          color="transparent"
+          routes={dashboardRoutes}
+          brand="Grow Bro"
+          leftLinks={<HeaderLinks />}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: "white",
+          }}
+          {...rest}
+        />
+        <Parallax responsive image={require("assets/img/LANDING.png")}>
+          <div className={classes.container}>
+            <GridContainer>
+              <GridItem xs={12} sm={12} md={6}>
+                <h4 className={classes.title}>
+                  <Typography variant="h4" gutterBottom>
+                    GrowBro is a Grow Box with plug and play system. Plug it
+                    into your home socket and you're good to GROW!
+                  </Typography>
+                </h4>
+                <br />
+                <AddUser>
+                  <ToastContainer />
+                </AddUser>
+              </GridItem>
+            </GridContainer>
+          </div>
+        </Parallax>
+        <div className={classNames(classes.main, classes.mainRaised)}>
+          <div className={classes.container}>
+            <ProductSection />
+            <TeamSection />
+            <WorkSection />
+          </div>
         </div>
-      </Parallax>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
-        </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
