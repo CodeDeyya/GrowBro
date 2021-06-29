@@ -12,6 +12,14 @@ import { addTask } from "../store/userinfo/userAction.js";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  customBtn: {
+    background: "#00754b",
+    color: "white",
+  },
+});
 
 const AddUser = () => {
   const [showModal, setShowModal] = useState(false);
@@ -168,13 +176,16 @@ const AddUser = () => {
     }
   };
 
+  const classes = useStyles();
+
   return (
     <div>
       <Button
-        variant="danger"
+        variant="flat"
         onClick={() => setShowModal(true)}
         round={true}
         block
+        className={classes.customBtn}
       >
         <i class="fas fa-seedling"></i>Start Grow
       </Button>

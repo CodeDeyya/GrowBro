@@ -15,6 +15,7 @@ import HeaderLinks from "components/Header/HeaderLinks.js";
 import Parallax from "components/Parallax/Parallax.js";
 import AddUser from "components/AddUser.js";
 import Hidden from "@material-ui/core/Hidden";
+import Box from "@material-ui/core/Box";
 
 import styles from "assets/jss/nextjs-material-kit/pages/landingPage.js";
 
@@ -94,19 +95,20 @@ export default function LandingPage(props) {
   };
 
   return (
-    <div>
-      <Header
-        color="transparent"
-        routes={dashboardRoutes}
-        leftLinks={<HeaderLinks />}
-        fixed
-        changeColorOnScroll={{
-          height: 400,
-          color: "white",
-        }}
-        {...rest}
-      />
-      <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Header
+          color="transparent"
+          routes={dashboardRoutes}
+          leftLinks={<HeaderLinks />}
+          fixed
+          changeColorOnScroll={{
+            height: 400,
+            color: "white",
+          }}
+          {...rest}
+        />
+
         <Hidden smDown>
           <Parallax responsive image={require("assets/img/front.jpg")}>
             <div className={classes.container}>
@@ -145,15 +147,16 @@ export default function LandingPage(props) {
             </div>
           </Parallax>
         </Hidden>
-      </ThemeProvider>
-      <div className={classNames(classes.main, classes.mainRaised)}>
-        <div className={classes.container}>
-          <ProductSection />
-          <TeamSection />
-          <WorkSection />
+
+        <div className={classNames(classes.main, classes.mainRaised)}>
+          <div className={classes.container}>
+            <ProductSection />
+            <TeamSection />
+            <WorkSection />
+          </div>
         </div>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </ThemeProvider>
   );
 }
