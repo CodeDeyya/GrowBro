@@ -34,21 +34,17 @@ export default function HeaderLinks(props) {
   const classes = useStyles();
 
   return (
-    <Grid container spacing={3}>
-      <Grid item xs={12} md={6}>
-        <LoginButton></LoginButton>
+    <div>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={4}>
+          <LoginButton></LoginButton>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <AddUser></AddUser>
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <AddUser></AddUser>
-      </Grid>
-    </Grid>
-    // <Row>
-    // <Col>
-    // <AddUser></AddUser>
-    // </Col>
-    // <Col md={{ span: 15, offset: 7 }}>
-    // <AddUser></AddUser>
-    // </Col>
-    // </Row>
+
+      <Grid container spacing={3}></Grid>
+    </div>
   );
 }

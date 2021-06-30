@@ -32,8 +32,8 @@ export default function Footer(props) {
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
+              <a href="#techsupport" className={classes.block}>
+                Technical Support
               </a>
             </ListItem>
           </List>
@@ -41,14 +41,8 @@ export default function Footer(props) {
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
-            <a
-              href="https://www.creative-tim.com?ref=njsmd-footer"
-              target="_blank"
-              className={classes.a}
-            >
-              Creative Tim
-            </a>
-            , made with love for a better web
+            <a className={classes.a}>Divor Automations Pvt Ltd</a> for all plant
+            lovers
           </span>
         </p>
       </div>

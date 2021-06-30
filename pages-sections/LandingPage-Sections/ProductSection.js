@@ -5,7 +5,8 @@ import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
 import Chat from "@material-ui/icons/Chat";
 import VerifiedUser from "@material-ui/icons/VerifiedUser";
-import Fingerprint from "@material-ui/icons/Fingerprint";
+import HttpsIcon from "@material-ui/icons/Https";
+import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 // core components
 import GridContainer from "components/Grid/GridContainer.js";
 import GridItem from "components/Grid/GridItem.js";
@@ -42,7 +43,6 @@ export default function ProductSection() {
       <GridContainer justify="center">
         <GridItem xs={12} sm={12} md={12}>
           <h3 className={classes.title}>Let's Grow</h3>
-
           <h5 className={classes.description}>
             GrowBro is inherently designed to fit novice gardeners or amateur
             horticulture enthusiasts or anyone who loves technology. However,
@@ -54,33 +54,30 @@ export default function ProductSection() {
       </GridContainer>
       <div>
         <GridContainer>
-          <GridItem xs={12}>
-            <h2 className={classes.title}>Key Features</h2>
-          </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Free Chat"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Chat}
+              title="Island Wide Delivery"
+              description="Get your growbox delivered securely to your home. Overnight delivery by Growbro Team"
+              icon={LocalShippingIcon}
               iconColor="info"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Verified Users"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
+              title="1-Year Warranty"
+              description="We back all Grow Bro products with a 1 year warranty with technical support"
               icon={VerifiedUser}
-              iconColor="success"
+              iconColor="info"
               vertical
             />
           </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <InfoArea
-              title="Fingerprint"
-              description="Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough."
-              icon={Fingerprint}
-              iconColor="danger"
+              title="Information Security"
+              description="All your data is encrypted using standard SSL protocols"
+              icon={HttpsIcon}
+              iconColor="info"
               vertical
             />
           </GridItem>

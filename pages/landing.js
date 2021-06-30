@@ -20,6 +20,7 @@ import Box from "@material-ui/core/Box";
 import styles from "assets/jss/nextjs-material-kit/pages/landingPage.js";
 
 // Sections for this page
+import Features from "../components/Features.js";
 import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.js";
 import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
 import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
@@ -41,7 +42,7 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: ["Chilanka", "cursive"].join(","),
+    fontFamily: ["Roboto", "cursive"].join(","),
   },
 });
 
@@ -95,8 +96,8 @@ export default function LandingPage(props) {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <div>
+    <div>
+      <ThemeProvider theme={theme}>
         <Header
           color="transparent"
           routes={dashboardRoutes}
@@ -147,16 +148,14 @@ export default function LandingPage(props) {
             </div>
           </Parallax>
         </Hidden>
-
-        <div className={classNames(classes.main, classes.mainRaised)}>
-          <div className={classes.container}>
-            <ProductSection />
-            <TeamSection />
-            <WorkSection />
-          </div>
+      </ThemeProvider>
+      <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classes.container}>
+          <ProductSection />
+          <Features />
         </div>
-        <Footer />
       </div>
-    </ThemeProvider>
+      <Footer />
+    </div>
   );
 }
