@@ -45,6 +45,10 @@ const useStyles = makeStyles({
     marginTop: "100px",
     textAlign: "center",
   },
+  color: {
+    marginTop: "100px",
+    backgroundColor: "#F8F8F8",
+  },
 });
 
 function Features() {
@@ -69,7 +73,7 @@ function Features() {
         </Grid>
       </Grid>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} className={classes.color}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -97,7 +101,7 @@ function Features() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} className={classes.color}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -127,7 +131,7 @@ function Features() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} className={classes.color}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
@@ -157,7 +161,7 @@ function Features() {
             </CardActionArea>
           </Card>
         </Grid>
-        <Grid item xs={12} md={3}>
+        <Grid item xs={12} md={3} className={classes.color}>
           <Card className={classes.root}>
             <CardActionArea>
               <CardMedia
