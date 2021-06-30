@@ -12,6 +12,8 @@ import CardMedia from "@material-ui/core/CardMedia";
 import InfoArea from "components/InfoArea/InfoArea.js";
 import Typography from "@material-ui/core/Typography";
 import img from "../assets/img/box.png";
+import imghome from "../public/imghome.jpeg";
+import imghometwo from "../public/imghometwo.jpeg";
 import Image from "next/image";
 
 const useStyles = makeStyles({
@@ -36,6 +38,12 @@ const useStyles = makeStyles({
   },
   box: {
     verticalAlign: "middle",
+  },
+  title2: {
+    textDecoration: "none",
+    color: "#5AB9EA",
+    marginTop: "100px",
+    textAlign: "center",
   },
 });
 
@@ -176,6 +184,31 @@ function Features() {
               </CardContent>
             </CardActionArea>
           </Card>
+        </Grid>
+      </Grid>
+      <Grid container spacing={5}>
+        <Grid item xs={12}>
+          <h2 className={classes.title2}>
+            GrowBro blends in just fine to your household{" "}
+          </h2>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Image
+            src={imghome}
+            alt="Features"
+            layout="responsive"
+            width={1280}
+            height={720}
+          ></Image>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Image
+            src={imghometwo}
+            alt="Features"
+            layout="responsive"
+            width={1280}
+            height={720}
+          ></Image>
         </Grid>
       </Grid>
     </div>
