@@ -19,11 +19,10 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/Person";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
-import Notifications from "@material-ui/icons/Notifications";
-import Unarchive from "@material-ui/icons/Unarchive";
-import Language from "@material-ui/icons/Language";
+import { BsController } from "react-icons/bs";
+import { FaCalendarWeek } from "react-icons/fa";
+import { FaPagelines } from "react-icons/fa";
+import { FaWater } from "react-icons/fa";
 
 const dashboardRoutes = [
   {
@@ -38,23 +37,16 @@ const dashboardRoutes = [
     path: "/controller",
     name: "Controller",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+    icon: BsController,
 
     layout: "/admin",
   },
-  {
-    path: "/datalogger",
-    name: "Data Logger",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: LibraryBooks,
 
-    layout: "/admin",
-  },
   {
     path: "/notebook",
     name: "Note Book",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: LibraryBooks,
+    icon: FaPagelines,
 
     layout: "/admin",
   },
@@ -62,11 +54,18 @@ const dashboardRoutes = [
     path: "/waterchange",
     name: "Drain/Fill",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: LibraryBooks,
+    icon: FaWater,
 
     layout: "/admin",
   },
-  
+  {
+    path: "/datalogger",
+    name: "Data Logger",
+    rtlName: "ملف تعريفي للمستخدم",
+    icon: FaCalendarWeek,
+
+    layout: "/admin",
+  },
 ];
 
 export default dashboardRoutes;
