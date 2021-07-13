@@ -3,9 +3,13 @@ import { container, title } from "assets/jss/nextjs-material-kit.js";
 const landingPageStyle = {
   container: {
     zIndex: "12",
-    color: "#FFFFFF",
+    color: "#004553",
     ...container,
   },
+  center:{
+    display: "flex",
+  },
+
   title: {
     ...title,
     display: "inline-block",
@@ -21,9 +25,38 @@ const landingPageStyle = {
     margin: "10px auto 0",
   },
   main: {
-    background: "#FFFFFF",
+    background: "#004553",
     position: "relative",
-    zIndex: "3",
+  },
+  containerb:{
+    marginTop: "69px"
+  },
+  image: {
+    width: "486.72px",
+height: "72.69px",
+marginTop: "117px",
+marginLeft:"77px"
+
+
+
+  },
+  hero: {
+    width: "886px",
+height: "886px",
+marginTop: "69px"
+
+  },
+  local:{
+    marginTop: "100px",
+    marginLeft:"100px"
+  },
+  soon: {
+    marginTop: "100px",
+    marginLeft:"100px"
+  },
+  icons: {
+    marginTop: "100px",
+    marginLeft:"150px"
   },
   mainRaised: {
     margin: "10px 30px 0px",
