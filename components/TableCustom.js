@@ -55,7 +55,7 @@ export default function BasicTable() {
   const[flowerSelect, setFlowerSelect] = useState(false);
   const[flushWeekSelect, setFlushWeekSelect] = useState(false);
 
-
+  const tableKey = new Date().getTime();
   useEffect(() => {
     const intervalId = setInterval(() => {  //assign interval to a variable to clear it.
       axios
@@ -114,7 +114,10 @@ export default function BasicTable() {
       axios
       .get(api.dataAPI)
       .then(response => {
-        var data = response.data
+        var dataArray = response.data
+        var data = dataArray.find(obj => {
+          return obj._id === "6052e44860ab3d1d88673fb7"
+        })
         console.log(data.Status)
         setWeekNow(data.Status)
         if(data.Status === 0){
@@ -136,6 +139,7 @@ export default function BasicTable() {
           setFlushWeekSelect(false)
         }
         if(data.Status === 2){
+          console.log("DATA",midVegSelect)
           setGermSelect(false);
           setEarlyVegSelect(false);
           setMidVegSelect(true)
@@ -755,7 +759,7 @@ axios(config)
   return (
     <div>
     <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="simple table">
+      <Table key ={tableKey} className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell align="left"><h4>Grow Stage</h4></TableCell>

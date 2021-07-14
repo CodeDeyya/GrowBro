@@ -130,9 +130,15 @@ export default function LandingPage(props) {
              </Grid>
            </Grid>
 </Grid>
+
            <Grid sm={12} md={6} item >
+           <Grid container direction="column"
+  alignItems="center"
+  justify="center"
+  style={{ minHeight: '100vh' }}>
              <Image width={886}
       height={886} layout="intrinsic" className = {classes.hero} src = {hero} ></Image>
+           </Grid>
            </Grid>
          </Grid>
      
