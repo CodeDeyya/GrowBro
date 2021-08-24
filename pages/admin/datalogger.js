@@ -65,10 +65,10 @@ function TableList() {
             object._id.month,
             object._id.day,
             object._id.hour,
-            object.avgAtemp,
-            object.avgWtemp,
-            object.avgWaterLevel,
-            object.avgRhumidity,
+            Math.floor(object.avgAtemp),
+            Math.floor(object.avgWtemp),
+            Math.floor(object.avgWaterLevel),
+            Math.floor(object.avgRhumidity),
           ]);
           console.log(data);
         });
